@@ -1,0 +1,329 @@
+{
+	"info": {
+		"_postman_id": "2a4753a5-6255-49ed-b220-cda1cb3ffb4b",
+		"name": "Вызов-1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28052463"
+	},
+	"item": [
+		{
+			"name": "adding time with one valid additional parameter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/time/add?timestamp=2024-12-01&months=1",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"time",
+						"add"
+					],
+					"query": [
+						{
+							"key": "timestamp",
+							"value": "2024-12-01"
+						},
+						{
+							"key": "months",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adding time with all valid additional parameters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/time/add?timestamp=2024-12-01&years=1&months=1&days=1&hours=1&minutes=1&seconds=1&milliseconds=1",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"time",
+						"add"
+					],
+					"query": [
+						{
+							"key": "timestamp",
+							"value": "2024-12-01"
+						},
+						{
+							"key": "years",
+							"value": "1"
+						},
+						{
+							"key": "months",
+							"value": "1"
+						},
+						{
+							"key": "days",
+							"value": "1"
+						},
+						{
+							"key": "hours",
+							"value": "1"
+						},
+						{
+							"key": "minutes",
+							"value": "1"
+						},
+						{
+							"key": "seconds",
+							"value": "1"
+						},
+						{
+							"key": "milliseconds",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adding time with empty additional  parameters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{add_date}}?timestamp=2024-12-01&years&months&days",
+					"host": [
+						"{{add_date}}"
+					],
+					"query": [
+						{
+							"key": "timestamp",
+							"value": "2024-12-01"
+						},
+						{
+							"key": "years",
+							"value": null
+						},
+						{
+							"key": "months",
+							"value": null
+						},
+						{
+							"key": "days",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adding time with valid and invalid parameters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{add_date}}?timestamp=2024-12-01&years=1&months=-1&days=1",
+					"host": [
+						"{{add_date}}"
+					],
+					"query": [
+						{
+							"key": "timestamp",
+							"value": "2024-12-01"
+						},
+						{
+							"key": "years",
+							"value": "1"
+						},
+						{
+							"key": "months",
+							"value": "-1"
+						},
+						{
+							"key": "days",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adding time with only invalid additional parameters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{add_date}}?timestamp=2024-12-01&years=%&months=*&days=))",
+					"host": [
+						"{{add_date}}"
+					],
+					"query": [
+						{
+							"key": "timestamp",
+							"value": "2024-12-01"
+						},
+						{
+							"key": "years",
+							"value": "%"
+						},
+						{
+							"key": "months",
+							"value": "*"
+						},
+						{
+							"key": "days",
+							"value": "))"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adding time with invalid timestamp",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{add_date}}?timestamp=this year&years=1&months=1&days=1",
+					"host": [
+						"{{add_date}}"
+					],
+					"query": [
+						{
+							"key": "timestamp",
+							"value": "this year"
+						},
+						{
+							"key": "years",
+							"value": "1"
+						},
+						{
+							"key": "months",
+							"value": "1"
+						},
+						{
+							"key": "days",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adding time with unknown parameter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{add_date}}?timestamp=2024-12-01&years=1&months=1&days=1&half-day=2",
+					"host": [
+						"{{add_date}}"
+					],
+					"query": [
+						{
+							"key": "timestamp",
+							"value": "2024-12-01"
+						},
+						{
+							"key": "years",
+							"value": "1"
+						},
+						{
+							"key": "months",
+							"value": "1"
+						},
+						{
+							"key": "days",
+							"value": "1"
+						},
+						{
+							"key": "half-day",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {\r",
+					"    pm.response.to.have.status(200);\r",
+					"});\r",
+					"pm.test(\"Body matches string\", function () {\r",
+					"    pm.expect(pm.response.text()).to.include(\"sum\");\r",
+					"    pm.expect(pm.response.text()).to.include(\"level\");\r",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "add_date",
+			"value": "https://postman-echo.com/time/add",
+			"type": "string"
+		}
+	]
+}
